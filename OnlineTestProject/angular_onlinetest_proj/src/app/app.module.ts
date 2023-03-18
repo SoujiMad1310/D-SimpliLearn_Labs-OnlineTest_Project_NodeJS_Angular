@@ -7,12 +7,14 @@ import { HeaderComponent } from './header/header.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ChangeTestBgDirective } from './change-test-bg.directive';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     WelcomeComponent,
     QuestionsComponent,
+    ChangeTestBgDirective,
    
   ],
   imports: [
