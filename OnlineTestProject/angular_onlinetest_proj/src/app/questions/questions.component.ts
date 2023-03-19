@@ -12,6 +12,7 @@ export class QuestionsComponent implements OnInit{
   public name: string="";
   public email: string="";
   public questionsList:any=[];
+  public answeredList: any=[];
   public questionNumber: number = 0;
   score: number = 0;
   counter = 60;
@@ -58,17 +59,17 @@ export class QuestionsComponent implements OnInit{
     if(questionNum === this.questionsList.length)
     {
       this.isTestCompleted = true;
+      this.score = this.score + this.num_of_wrong_Ans*-5;
       this.stopTimer();
     }
     if(option.correct){
-      this.score +=10;
+      this.score +=10;      
       this.num_of_correct_Ans++;   
     }
-    else{
-      this.score-=5;
+    else{        
       this.num_of_wrong_Ans++;
     }
-
+    
     // To delay before going to next question
     setTimeout(()=>{
       this.questionNumber++;
